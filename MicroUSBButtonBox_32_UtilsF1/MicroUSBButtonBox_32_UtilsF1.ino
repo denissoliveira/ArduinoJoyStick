@@ -1,7 +1,7 @@
 #include <Keypad.h>
 #include <Joystick.h>
 
-#define NUMBUTTONS 12
+#define NUMBUTTONS 20
 #define NUMROWS 3
 #define NUMCOLS 4
 
@@ -20,7 +20,7 @@ Keypad buttbx = Keypad( makeKeymap(buttons), rowPins, colPins, NUMROWS, NUMCOLS)
 
 //initialize an Joystick with 56 buttons;
 Joystick_ Joystick(JOYSTICK_DEFAULT_REPORT_ID, 
-  JOYSTICK_TYPE_JOYSTICK, 32, 0,
+  JOYSTICK_TYPE_JOYSTICK, NUMBUTTONS, 0,
   false, false, false, false, false, false,
   false, false, false, false, false);
 
@@ -35,7 +35,7 @@ void setup() {
   Joystick.begin();
 }
 
-const int tempoApertoBotao = 50;
+const int tempoApertoBotao = 150;
 
 void pressButton(int numBotao) {
   Joystick.pressButton(numBotao);
@@ -50,11 +50,11 @@ void pressButton2Way(int pinState, int joyButton, int joyButton2, int lastButton
   if (lastButtonState[lastButtonStateNumb] != pinState && pinState == 1) {
     pressButton(joyButton);
     lastButtonState[lastButtonStateNumb] = pinState;
-    Serial.print("if ");Serial.println(pinState);
+    //Serial.print("if ");Serial.println(pinState);
   }else if (lastButtonState[lastButtonStateNumb] != pinState && pinState == 0) {
     pressButton(joyButton2);
     lastButtonState[lastButtonStateNumb] = pinState;
-    Serial.print("else if ");Serial.println(pinState);
+    //Serial.print("else if ");Serial.println(pinState);
   }
 }
 
@@ -65,7 +65,6 @@ void pressButton3Way(int pinState1, int pinState2, int joyButton1, int joyButton
   int state01 = initialArrayState; 
   int state02 = initialArrayState + 1;
   int state03 = initialArrayState + 2;
-
 
   for (int i = 0; i < 3; i++) {
     if (currentButtonStateA0 == 1 && lastButtonState[state01] == 0) {
@@ -111,19 +110,19 @@ void CheckAllButtons(void) {
             switch (buttbx.key[i].kstate) {  // Report active key state : IDLE, PRESSED, HOLD, or RELEASED
                     case PRESSED:
                               Joystick.pressButton(buttbx.key[i].kchar); 
-                              Serial.println("PRESSED");
+                              //Serial.println("PRESSED");
                               break;
                     case HOLD:
                               Joystick.releaseButton(buttbx.key[i].kchar);
-                              Serial.println("HOLD");
+                              //Serial.println("HOLD");
                               break;
                     case RELEASED:
                               Joystick.releaseButton(buttbx.key[i].kchar);
-                              Serial.println("RELEASED");
+                              //Serial.println("RELEASED");
                               break;
                     case IDLE:
                               Joystick.releaseButton(buttbx.key[i].kchar);
-                              Serial.println("IDLE");
+                              //Serial.println("IDLE");
                               break;
             }
            }   
