@@ -139,13 +139,13 @@ void CheckSwithsButtons(void) {
 
   if (pin8 == 1 && lastButtonState[5] != pin8) {
      Keyboard.press(KEY_RIGHT_CTRL);Keyboard.press(KEY_HOME);
-    delay(tempoApertoBotao);
+    delay(400);
     Keyboard.releaseAll();
     //Serial.println("Eng R Start");
     lastButtonState[5] = pin8;
   }else if (pin8 == 0 && lastButtonState[5] != pin8){
     Keyboard.press(KEY_RIGHT_CTRL);Keyboard.press(KEY_END);
-    delay(tempoApertoBotao);
+    delay(400);
     Keyboard.releaseAll();
     //Serial.println("Eng R Stop");
     lastButtonState[5] = pin8;
@@ -153,13 +153,13 @@ void CheckSwithsButtons(void) {
 
   if (pin9 == 1 && lastButtonState[6] != pin9) {
     Keyboard.press(KEY_RIGHT_ALT);Keyboard.press(KEY_HOME);
-    delay(tempoApertoBotao);
+    delay(400);
     Keyboard.releaseAll();
     //Serial.println("Eng L Start");
     lastButtonState[6] = pin9;
   }else if (pin9 == 0 && lastButtonState[6] != pin9){
     Keyboard.press(KEY_RIGHT_ALT);Keyboard.press(KEY_END);
-    delay(tempoApertoBotao);
+    delay(400);
     Keyboard.releaseAll();
     //Serial.println("Eng L Stop");
     lastButtonState[6] = pin9;
@@ -257,7 +257,7 @@ void CheckSwithsButtons(void) {
     //Serial.println("Electric Power On");
     lastButtonState[13] = pin20;
   }else if (pin20 == 0 && lastButtonState[13] != pin20){
-    //Keyboard.press(KEY_RIGHT_SHIFT);Keyboard.press('l');
+    Keyboard.press(KEY_RIGHT_SHIFT);Keyboard.press('l');
     delay(tempoApertoBotao);
     Keyboard.releaseAll();
     //Serial.println("Electric Power Off");
