@@ -242,7 +242,7 @@ void CheckSwithsButtons(void) {
     //Serial.println("Light Nav On");
     lastButtonState[12] = pin19;
   }else if (pin19 == 0 && lastButtonState[12] != pin19){
-    Keyboard.press('l');
+    Keyboard.press(KEY_RIGHT_CTRL);Keyboard.press('l');
     delay(tempoApertoBotao);
     Keyboard.releaseAll();
     //Serial.println("Light Nav Off");

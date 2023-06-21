@@ -20,12 +20,13 @@ byte colPins[NUMCOLS] = {3,5,7,9,16,14}; //connect to the column pinouts of the 
 Keypad keypad = Keypad( makeKeymap(keys), rowPins, colPins, NUMROWS, NUMCOLS); 
 
 const int tempoApertoBotao = 150;
-int lastButtonState[12] = { 0, 0, 0, 0, 0 ,0 ,0 ,0 ,0 ,0 ,0 ,0};
+int lastButtonState[13] = { 0, 0, 0, 0, 0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0};
 
 void setup() {
   Serial.begin(9600);
   pinMode(15, INPUT_PULLUP);
   pinMode(18, INPUT_PULLUP);
+  pinMode(19, INPUT_PULLUP);
   Keyboard.begin();
 }
 
@@ -38,6 +39,7 @@ void loop() {
 void CheckSwithsButtons(void) {
   int pin15 = !digitalRead(15); 
   int pin18 = !digitalRead(18); 
+  int pin19 = !digitalRead(19); 
 
   if (pin15 == 1 && lastButtonState[0] != pin15) {
     Keyboard.press(KEY_LEFT_CTRL);    Keyboard.press('f');
@@ -65,6 +67,20 @@ void CheckSwithsButtons(void) {
     Keyboard.releaseAll();
     //Serial.println("Flaps Donw");
     lastButtonState[2] = 1;
+  }
+
+  if (pin19 == 1 && lastButtonState[3] != pin19) {
+    Keyboard.press(KEY_LEFT_CTRL);  Keyboard.press('c');
+    delay(tempoApertoBotao);
+    Keyboard.releaseAll();
+    //Serial.println("canopy");
+    lastButtonState[3] = pin19;
+  }else if (pin19 != 1 && lastButtonState[3] != pin19) {
+    Keyboard.press(KEY_LEFT_CTRL);  Keyboard.press('c');
+    delay(tempoApertoBotao);
+    Keyboard.releaseAll();
+    //Serial.println("canopy");
+    lastButtonState[3] = pin19;
   }
 
 }  

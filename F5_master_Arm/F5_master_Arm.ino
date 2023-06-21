@@ -31,26 +31,26 @@ void teclado(void) {
 
   //Emer all jet
   if (pin7 == 1 && lastButtonState[state01] != pin7) {
-    Keyboard.press(KEY_LEFT_CTRL); Keyboard.press(KEY_LEFT_SHIFT); Keyboard.press('9');
+    //Keyboard.press(KEY_LEFT_CTRL); //Keyboard.press(KEY_LEFT_SHIFT); //Keyboard.press('9');
     delay(500);
     Keyboard.releaseAll();
-    Keyboard.press(KEY_LEFT_CTRL); Keyboard.press(KEY_LEFT_SHIFT); Keyboard.press('0');
+    //Keyboard.press(KEY_LEFT_CTRL); //Keyboard.press(KEY_LEFT_SHIFT); //Keyboard.press('0');
     delay(tempoApertoBotao);
-    //Serial.println("emer all jet");
+    Serial.println("emer all jet");
     lastButtonState[state01] = pin7;
   }else if (pin7 != 1 && lastButtonState[state01] != pin7) {
     lastButtonState[state01] = pin7;
     Keyboard.releaseAll();
-    //Serial.println("emer all jet solto !");
+    Serial.println("emer all jet solto !");
   }
 
   //______________________
   //select jettson - select position
   if (pin9 == 1 && lastButtonState[state02] != pin9) {
-    Keyboard.press(KEY_LEFT_CTRL);    Keyboard.press(KEY_LEFT_ALT);    Keyboard.press('p');
+    //Keyboard.press(KEY_LEFT_CTRL);    //Keyboard.press(KEY_LEFT_ALT);    //Keyboard.press('p');
     delay(tempoApertoBotao);
     Keyboard.releaseAll();
-    //Serial.println("select jettson - select position");
+    Serial.println("select jettson - select position");
     lastButtonState[state02] = pin9;
     lastButtonState[state04] = 0;
   }else {
@@ -58,10 +58,10 @@ void teclado(void) {
   }
   //select jettson - all pilones
   if (pin8 == 1 && lastButtonState[state03] != pin8) {
-    Keyboard.press(KEY_LEFT_CTRL);    Keyboard.press(KEY_LEFT_ALT);    Keyboard.press('a');
+    //Keyboard.press(KEY_LEFT_CTRL);    //Keyboard.press(KEY_LEFT_ALT);    //Keyboard.press('a');
     delay(tempoApertoBotao);
     Keyboard.releaseAll();
-    //Serial.println("select jettson - all pilones");
+    Serial.println("select jettson - all pilones");
     lastButtonState[state03] = pin8;
     lastButtonState[state04] = 0;
   }else {
@@ -69,20 +69,20 @@ void teclado(void) {
   }
   //select jettson - off
   if (pin9 == 0 && pin8 == 0 && lastButtonState[state04] != 1) {
-    Keyboard.press(KEY_LEFT_CTRL);    Keyboard.press(KEY_LEFT_ALT);    Keyboard.press('o');
+    //Keyboard.press(KEY_LEFT_CTRL);    //Keyboard.press(KEY_LEFT_ALT);    //Keyboard.press('o');
     delay(tempoApertoBotao);
     Keyboard.releaseAll();
-    //Serial.println("select jettson - off");
+    Serial.println("select jettson - off");
     lastButtonState[state04] = 1;
   }
 
   //______________________  
   //External store - RIPL
   if (pin6 == 1 && lastButtonState[state05] != pin6) {
-    Keyboard.press(KEY_LEFT_CTRL);    Keyboard.press(KEY_LEFT_ALT);    Keyboard.press('r');
+    //Keyboard.press(KEY_LEFT_CTRL);    //Keyboard.press(KEY_LEFT_ALT);    //Keyboard.press('r');
     delay(tempoApertoBotao);
     Keyboard.releaseAll();
-    //Serial.println("External store - RIPL");
+    Serial.println("External store - RIPL");
     lastButtonState[state05] = pin6;
   }else {
     lastButtonState[state05] = pin6;
@@ -90,10 +90,10 @@ void teclado(void) {
 
   //External store - Bomb
   if (pin5 == 1 && lastButtonState[state06] != pin5) {
-    Keyboard.press(KEY_LEFT_CTRL);    Keyboard.press(KEY_LEFT_ALT);    Keyboard.press('b');
+    //Keyboard.press(KEY_LEFT_CTRL);    //Keyboard.press(KEY_LEFT_ALT);    //Keyboard.press('b');
     delay(tempoApertoBotao);
     Keyboard.releaseAll();
-    //Serial.println("External store - Bomb");
+    Serial.println("External store - Bomb");
     lastButtonState[state06] = pin5;
   }else {
     lastButtonState[state06] = pin5;
@@ -101,10 +101,10 @@ void teclado(void) {
 
   //External store - Safe
   if (pin4 == 1 && lastButtonState[state07] != pin4) {
-    Keyboard.press(KEY_LEFT_CTRL);    Keyboard.press(KEY_LEFT_ALT);    Keyboard.press('s');
+    //Keyboard.press(KEY_LEFT_CTRL);    //Keyboard.press(KEY_LEFT_ALT);    //Keyboard.press('s');
     delay(tempoApertoBotao);
     Keyboard.releaseAll();
-    //Serial.println("External store - Safe");
+    Serial.println("External store - Safe");
     lastButtonState[state07] = pin4;
   }else {
     lastButtonState[state07] = pin4;
@@ -112,10 +112,10 @@ void teclado(void) {
 
   //External store - RKT/DISP
   if (pin3 == 1 && lastButtonState[state08] != pin3) {
-    Keyboard.press(KEY_LEFT_CTRL);    Keyboard.press(KEY_LEFT_ALT);    Keyboard.press('d');
+    //Keyboard.press(KEY_LEFT_CTRL);    //Keyboard.press(KEY_LEFT_ALT);    //Keyboard.press('d');
     delay(tempoApertoBotao);
     Keyboard.releaseAll();
-    //Serial.println("External store - RKT/DISP");
+    Serial.println("External store - RKT/DISP");
     lastButtonState[state08] = pin3;
   }else {
     lastButtonState[state08] = pin3;
@@ -123,10 +123,10 @@ void teclado(void) {
 
   //Arm on
   if (pin14 == 1 && lastButtonState[state09] != pin14) {
-    Keyboard.press(KEY_LEFT_CTRL);    Keyboard.press(KEY_LEFT_SHIFT);    Keyboard.press('g');
+    //Keyboard.press(KEY_LEFT_CTRL);    //Keyboard.press(KEY_LEFT_SHIFT);    //Keyboard.press('g');
     delay(tempoApertoBotao);
     Keyboard.releaseAll();
-    //Serial.println("Arm on");
+    Serial.println("Arm on");
     lastButtonState[state09] = pin14;
   }else {
     lastButtonState[state09] = pin14;
@@ -134,10 +134,10 @@ void teclado(void) {
 
   //Arm off
   if (pin15 == 1 && lastButtonState[state10] != pin15) {
-    Keyboard.press(KEY_LEFT_CTRL);    Keyboard.press(KEY_LEFT_SHIFT);    Keyboard.press('b');
+    //Keyboard.press(KEY_LEFT_CTRL);    //Keyboard.press(KEY_LEFT_SHIFT);    //Keyboard.press('b');
     delay(tempoApertoBotao);
     Keyboard.releaseAll();
-    //Serial.println("Arm off");
+    Serial.println("Arm off");
     lastButtonState[state10] = pin15;
   }else {
     lastButtonState[state10] = pin15;
@@ -145,10 +145,10 @@ void teclado(void) {
 
   //Bomb Arms cw
   if (pin16 == 1 && lastButtonState[state11] != pin16) {
-    Keyboard.press(KEY_LEFT_CTRL);    Keyboard.press(KEY_LEFT_SHIFT);    Keyboard.press('e');
+    //Keyboard.press(KEY_LEFT_CTRL);    //Keyboard.press(KEY_LEFT_SHIFT);    //Keyboard.press('e');
     delay(tempoApertoBotao);
     Keyboard.releaseAll();
-    //Serial.println("Bomb Arms cw");
+    Serial.println("Bomb Arms cw");
     lastButtonState[state11] = pin16;
   }else {
     lastButtonState[state11] = pin16;
@@ -156,10 +156,10 @@ void teclado(void) {
 
   //Bomb Arms ccw
   if (pin10 == 1 && lastButtonState[state12] != pin10) {
-    Keyboard.press(KEY_LEFT_CTRL);    Keyboard.press(KEY_LEFT_SHIFT);    Keyboard.press('w');
+    //Keyboard.press(KEY_LEFT_CTRL);    //Keyboard.press(KEY_LEFT_SHIFT);    //Keyboard.press('w');
     delay(tempoApertoBotao);
     Keyboard.releaseAll();
-    //Serial.println("Bomb Arms ccw");
+    Serial.println("Bomb Arms ccw");
     lastButtonState[state12] = pin10;
   }else {
     lastButtonState[state12] = pin10;
@@ -172,7 +172,7 @@ void setup() {  // initialize the buttons' inputs:
   pinMode(4, INPUT_PULLUP);
   pinMode(5, INPUT_PULLUP);
   pinMode(6, INPUT_PULLUP);
-  pinMode(7, INPUT_PULLUP);
+  pinMode(7, INPUT_PULLUP);09
   pinMode(8, INPUT_PULLUP);
   pinMode(9, INPUT_PULLUP);
   pinMode(10, INPUT_PULLUP);

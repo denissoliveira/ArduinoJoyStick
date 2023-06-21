@@ -43,22 +43,22 @@ void teclado(void) {
   int state08 = 7;
 
   if (pin15 == 1 && lastButtonState[state07] != pin15) {
-    Keyboard.press(KEY_LEFT_CTRL);  Keyboard.press(KEY_LEFT_SHIFT);  Keyboard.press(' '); 
+    //Keyboard.press(KEY_LEFT_CTRL);  //Keyboard.press(KEY_LEFT_SHIFT);  //Keyboard.press(' '); 
     delay(300);
     Keyboard.releaseAll();
-    Keyboard.press(KEY_LEFT_CTRL);    Keyboard.press(' ');
+    //Keyboard.press(KEY_LEFT_CTRL);    //Keyboard.press(' ');
     delay(300);
     Keyboard.releaseAll();
-    //Serial.println("Arm on");
+    Serial.println("Arm on");
     lastButtonState[state07] = pin15;
   }else if (pin15 == 0 && lastButtonState[state07] != pin15){
-    Keyboard.press(KEY_LEFT_ALT);    Keyboard.press(' ');
+    //Keyboard.press(KEY_LEFT_ALT);    //Keyboard.press(' ');
     delay(300);
     Keyboard.releaseAll();
-    Keyboard.press(KEY_LEFT_ALT);  Keyboard.press(KEY_LEFT_CTRL);  Keyboard.press(' '); 
+    //Keyboard.press(KEY_LEFT_ALT);  //Keyboard.press(KEY_LEFT_CTRL);  //Keyboard.press(' '); 
     delay(300);
     Keyboard.releaseAll();
-    //Serial.println("Arm off");
+    Serial.println("Arm off");
     lastButtonState[state07] = pin15;
   }
 
@@ -66,10 +66,10 @@ void teclado(void) {
   //Largage Switch
   //2
   if (pin14 == 1 && lastButtonState[state04] != pin14) {
-    Keyboard.press(KEY_RIGHT_SHIFT);    Keyboard.press('j');
+    //Keyboard.press(KEY_RIGHT_SHIFT);    //Keyboard.press('j');
     delay(tempoApertoBotao);
     Keyboard.releaseAll();
-    //Serial.println("Largage - 2");
+    Serial.println("Largage - 2");
     lastButtonState[state04] = pin14;
     lastButtonState[state06] = 0;
   }else {
@@ -77,10 +77,10 @@ void teclado(void) {
   }
   //fus
   if (pin16 == 1 && lastButtonState[state05] != pin16) {
-    Keyboard.press(KEY_LEFT_SHIFT);    Keyboard.press('j');
+    //Keyboard.press(KEY_LEFT_SHIFT);    //Keyboard.press('j');
     delay(tempoApertoBotao);
     Keyboard.releaseAll();
-    //Serial.println("Largage - fus");
+    Serial.println("Largage - fus");
     lastButtonState[state05] = pin16;
     lastButtonState[state06] = 0;
   }else {
@@ -88,10 +88,10 @@ void teclado(void) {
   }
   //1
   if (pin16 == 0 && pin14 == 0 && lastButtonState[state06] != 1) {
-    Keyboard.press(KEY_RIGHT_CTRL);    Keyboard.press('j');
+    //Keyboard.press(KEY_RIGHT_CTRL);    //Keyboard.press('j');
     delay(tempoApertoBotao);
     Keyboard.releaseAll();
-    //Serial.println("Largage - 1");
+    Serial.println("Largage - 1");
     lastButtonState[state06] = 1;
   }
 
@@ -99,10 +99,10 @@ void teclado(void) {
   //______________________
   //Tel
   if (pin10 == 1 && lastButtonState[state01] != pin10) {
-    Keyboard.press(KEY_LEFT_ALT);    Keyboard.press(KEY_LEFT_SHIFT);    Keyboard.press('z');
+    //Keyboard.press(KEY_LEFT_ALT);    //Keyboard.press(KEY_LEFT_SHIFT);    //Keyboard.press('z');
     delay(tempoApertoBotao);
     Keyboard.releaseAll();
-    //Serial.println("TEL");
+    Serial.println("TEL");
     lastButtonState[state01] = pin10;
     lastButtonState[state03] = 0;
   }else {
@@ -110,10 +110,10 @@ void teclado(void) {
   }
   //Bpz
   if (pin9 == 1 && lastButtonState[state02] != pin9) {
-    Keyboard.press(KEY_LEFT_CTRL);    Keyboard.press(KEY_LEFT_SHIFT);    Keyboard.press('z');
+    //Keyboard.press(KEY_LEFT_CTRL);    //Keyboard.press(KEY_LEFT_SHIFT);    //Keyboard.press('z');
     delay(tempoApertoBotao);
     Keyboard.releaseAll();
-    //Serial.println("BPZ");
+    Serial.println("BPZ");
     lastButtonState[state02] = pin9;
     lastButtonState[state03] = 0;
   }else {
@@ -121,10 +121,10 @@ void teclado(void) {
   }
   //center
   if (pin10 == 0 && pin9 == 0 && lastButtonState[state03] != 1) {
-    Keyboard.press(KEY_LEFT_ALT);    Keyboard.press(KEY_LEFT_GUI);    Keyboard.press('z');
+    //Keyboard.press(KEY_LEFT_ALT);    //Keyboard.press(KEY_LEFT_GUI);    //Keyboard.press('z');
     delay(tempoApertoBotao);
     Keyboard.releaseAll();
-    //Serial.println("CENTER");
+    Serial.println("CENTER");
     lastButtonState[state03] = 1;
   }
 
@@ -150,72 +150,72 @@ void loop(){
   char key = keypad.getKey(); //KEY_SPACE   KEY_LEFT_GUI
 
   if (key == '6'){ //PA
-    //Serial.println(key);
-    Keyboard.press(KEY_RIGHT_SHIFT); Keyboard.press('p');
+    Serial.println(key);
+    //Keyboard.press(KEY_RIGHT_SHIFT); //Keyboard.press('p');
     delay(tempoApertoBotao);
     Keyboard.releaseAll();
   }else if (key == '1'){ //CAP
-    //Serial.println(key);
-    Keyboard.press(KEY_LEFT_CTRL); Keyboard.press('p');
+    Serial.println(key);
+    //Keyboard.press(KEY_LEFT_CTRL); //Keyboard.press('p');
     delay(tempoApertoBotao);
     Keyboard.releaseAll();;
   }else if (key == '2'){ //ALT
-    //Serial.println(key);
-    Keyboard.press(KEY_LEFT_SHIFT); Keyboard.press('p');
+    Serial.println(key);
+    //Keyboard.press(KEY_LEFT_SHIFT); //Keyboard.press('p');
     delay(tempoApertoBotao);
     Keyboard.releaseAll();
   }else if (key == '3'){ //R
-    //Serial.println(key);
-    Keyboard.press(KEY_LEFT_ALT); Keyboard.press('p');
+    Serial.println(key);
+    //Keyboard.press(KEY_LEFT_ALT); //Keyboard.press('p');
     delay(tempoApertoBotao);
     Keyboard.releaseAll();
   }else if (key == 'q'){ //G
-    //Serial.println(key);
-    Keyboard.press(KEY_RIGHT_ALT); Keyboard.press('p');
+    Serial.println(key);
+    //Keyboard.press(KEY_RIGHT_ALT); //Keyboard.press('p');
     delay(tempoApertoBotao);
     Keyboard.releaseAll();
   }
 
   if (key == '4' || key == '5'){ //EFF.
-    //Serial.println(key);
-    Keyboard.press(KEY_LEFT_CTRL); Keyboard.press(KEY_LEFT_GUI); Keyboard.press('w');
+    Serial.println(key);
+    //Keyboard.press(KEY_LEFT_CTRL); //Keyboard.press(KEY_LEFT_GUI); //Keyboard.press('w');
     delay(tempoApertoBotao);
     Keyboard.releaseAll();
   }
 
   if (key == '9'){ //Flare
-    //Serial.println(key);
-    Keyboard.press('d');
+    Serial.println(key);
+    //Keyboard.press('d');
     delay(tempoApertoBotao);
     Keyboard.releaseAll();
   }
 
   if (key == '8'){ //Matra Jett - Larg ext
-    //Serial.println(key);
-    Keyboard.press(KEY_LEFT_CTRL); Keyboard.press(KEY_LEFT_SHIFT); Keyboard.press('`');
+    Serial.println(key);
+    //Keyboard.press(KEY_LEFT_CTRL); //Keyboard.press(KEY_LEFT_SHIFT); //Keyboard.press('`');
     delay(300);
     Keyboard.releaseAll();
-    Keyboard.press('`');
+    //Keyboard.press('`');
     delay(tempoApertoBotao);
     Keyboard.releaseAll();
   }
 
   if (key == '7'){ //Emergence jett - Detre
-    //Serial.println(key);
-    Keyboard.press(KEY_LEFT_CTRL); Keyboard.press(KEY_LEFT_SHIFT); Keyboard.press('j');
+    Serial.println(key);
+    //Keyboard.press(KEY_LEFT_CTRL); //Keyboard.press(KEY_LEFT_SHIFT); //Keyboard.press('j');
     delay(300);
     Keyboard.releaseAll();
-    Keyboard.press(KEY_LEFT_CTRL); Keyboard.press('j');
+    //Keyboard.press(KEY_LEFT_CTRL); //Keyboard.press('j');
     delay(500);
     Keyboard.releaseAll();
   }
 
   if (key == 'e'){ //Select Jett - Largage
-    //Serial.println(key);
-    Keyboard.press(KEY_RIGHT_CTRL); Keyboard.press(KEY_RIGHT_SHIFT); Keyboard.press('j');
+    Serial.println(key);
+    //Keyboard.press(KEY_RIGHT_CTRL); //Keyboard.press(KEY_RIGHT_SHIFT); //Keyboard.press('j');
     delay(300);
     Keyboard.releaseAll();
-    Keyboard.press(KEY_LEFT_ALT); Keyboard.press('j');
+    //Keyboard.press(KEY_LEFT_ALT); //Keyboard.press('j');
     delay(500);
     Keyboard.releaseAll();
   }

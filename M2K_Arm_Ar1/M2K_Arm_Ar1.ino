@@ -45,36 +45,36 @@ void CheckSwithsButtons(void) {
   int state04 = 3;
 
   if (pin14 == 1 && lastButtonState[state01] != pin14) {
-    Keyboard.press('0');
+    //Keyboard.press('0');
     delay(tempoApertoBotao);
     Keyboard.releaseAll();
-    Keyboard.press(KEY_LEFT_CTRL);Keyboard.press('6');
+    //Keyboard.press(KEY_LEFT_CTRL);//Keyboard.press('6');
     delay(tempoApertoBotao);
     Keyboard.releaseAll();
-    ////Serial.println("Arm off");
+    //Serial.println("Arm off");
     lastButtonState[state01] = pin14;
   }else if (pin14 == 0 && lastButtonState[state01] != pin14){
-    Keyboard.press('0');
+    //Keyboard.press('0');
     delay(tempoApertoBotao);
     Keyboard.releaseAll();
-    Keyboard.press(KEY_LEFT_CTRL);Keyboard.press('6');
+    //Keyboard.press(KEY_LEFT_CTRL);//Keyboard.press('6');
     delay(tempoApertoBotao);
     Keyboard.releaseAll();
-    ////Serial.println("Arm on");
+    //Serial.println("Arm on");
     lastButtonState[state01] = pin14;
   }
 
   if (pin15 == 1 && lastButtonState[state02] != pin15) {
-    Keyboard.press('-');
+    //Keyboard.press('-');
     delay(tempoApertoBotao);
     Keyboard.releaseAll();
-    ////Serial.println("Jett on");
+    //Serial.println("Jett on");
     lastButtonState[state02] = pin15;
   }else if (pin15 == 0 && lastButtonState[state02] != pin15){
-    Keyboard.press('-');
+    //Keyboard.press('-');
     delay(tempoApertoBotao);
     Keyboard.releaseAll();
-    ////Serial.println("Jett Off");
+    //Serial.println("Jett Off");
     lastButtonState[state02] = pin15;
   }
 
@@ -89,17 +89,17 @@ void CheckAllButtons(void) {
             switch (keypad.key[i].kstate) {  // Report active key state : IDLE, PRESSED, HOLD, or RELEASED
                     case PRESSED:
                               tecladoKeypadMatrix(keypad.key[i].kchar);
-                              //Serial.println("PRESSED");
+                              Serial.println("PRESSED");
                               break;
                     case HOLD:
-                              ////Serial.println("HOLD");
+                              //Serial.println("HOLD");
                               break;
                     case RELEASED:
                               Keyboard.releaseAll();
-                              //Serial.println("RELEASED");
+                              Serial.println("RELEASED");
                               break;
                     case IDLE:
-                              ////Serial.println("IDLE");
+                              //Serial.println("IDLE");
                               break;
             }
            }   
@@ -112,117 +112,117 @@ char tecladoKeypadMatrix(char key) {
 
   //Arms
   if (key == '1'){
-    //Serial.println("Weapons Store 5");
-    Keyboard.press(KEY_LEFT_CTRL); Keyboard.press('5');
+    Serial.println("Weapons Store 5");
+    //Keyboard.press(KEY_LEFT_CTRL); //Keyboard.press('5');
     delay(tempoApertoBotao);
     
   }
   if (key == '2'){
-    //Serial.println("Weapons Store 1");
-    Keyboard.press(KEY_LEFT_CTRL); Keyboard.press('1');
+    Serial.println("Weapons Store 1");
+    //Keyboard.press(KEY_LEFT_CTRL); //Keyboard.press('1');
     delay(tempoApertoBotao);
     
   }
   if (key == '3'){
-    //Serial.println("Weapons Store 4");
-    Keyboard.press(KEY_LEFT_CTRL); Keyboard.press('4');
+    Serial.println("Weapons Store 4");
+    //Keyboard.press(KEY_LEFT_CTRL); //Keyboard.press('4');
     delay(tempoApertoBotao);
     
   }
   if (key == '4'){
-    //Serial.println("Weapons Store 3");
-    Keyboard.press(KEY_LEFT_CTRL); Keyboard.press('3');
+    Serial.println("Weapons Store 3");
+    //Keyboard.press(KEY_LEFT_CTRL); //Keyboard.press('3');
     delay(tempoApertoBotao);
     
   }
   if (key == '5'){
-    //Serial.println("Weapons Store 2");
-    Keyboard.press(KEY_LEFT_CTRL); Keyboard.press('2');
+    Serial.println("Weapons Store 2");
+    //Keyboard.press(KEY_LEFT_CTRL); //Keyboard.press('2');
     delay(tempoApertoBotao);
     
   }
   if (key == '6'){
-    //Serial.println("PCA 5");
-    Keyboard.press('5');
+    Serial.println("PCA 5");
+    //Keyboard.press('5');
     delay(tempoApertoBotao);
     
   }
   if (key == '7'){
-    //Serial.println("PCA 1");
-    Keyboard.press('1');
+    Serial.println("PCA 1");
+    //Keyboard.press('1');
     delay(tempoApertoBotao);
     
   }
   if (key == '8'){
-    //Serial.println("PCA 4");
-    Keyboard.press('4');
+    Serial.println("PCA 4");
+    //Keyboard.press('4');
     delay(tempoApertoBotao);
     
   }
   if (key == '9'){
-    //Serial.println("PCA 3");
-    Keyboard.press('3');
+    Serial.println("PCA 3");
+    //Keyboard.press('3');
     delay(tempoApertoBotao);
     
   }
   if (key == '0'){
-    //Serial.println("PCA 2");
-    Keyboard.press('2');
+    Serial.println("PCA 2");
+    //Keyboard.press('2');
     delay(tempoApertoBotao);
     
   }
   if (key == 'q'){
-    //Serial.println("q");
-    Keyboard.press(KEY_RIGHT_CTRL); Keyboard.press('p');
+    Serial.println("q");
+    //Keyboard.press(KEY_RIGHT_CTRL); //Keyboard.press('p');
     delay(tempoApertoBotao);
     
   }
   if (key == 'w'){
-    //Serial.println("Altitude Hold");
-    Keyboard.press(KEY_LEFT_ALT); Keyboard.press(KEY_LEFT_SHIFT); Keyboard.press('a');
+    Serial.println("Altitude Hold");
+    //Keyboard.press(KEY_LEFT_ALT); //Keyboard.press(KEY_LEFT_SHIFT); //Keyboard.press('a');
     delay(tempoApertoBotao);
   }
   if (key == 'e'){
-    //Serial.println("e");
-    //Keyboard.press('0');
+    Serial.println("e");
+    ////Keyboard.press('0');
     delay(tempoApertoBotao);
   }
   if (key == 'r'){
-    //Serial.println("r");
-    //Keyboard.press('0');
+    Serial.println("r");
+    ////Keyboard.press('0');
     delay(tempoApertoBotao);
   }
   if (key == 't'){
-    //Serial.println("t");
-    //Keyboard.press('0');
+    Serial.println("t");
+    ////Keyboard.press('0');
     delay(tempoApertoBotao);
   }
   if (key == 'a'){
-    //Serial.println("Atitude Hold");
-    Keyboard.press(KEY_LEFT_CTRL); Keyboard.press('a');
+    Serial.println("Atitude Hold");
+    //Keyboard.press(KEY_LEFT_CTRL); //Keyboard.press('a');
     delay(tempoApertoBotao);
   }
   if (key == 's'){
-    //Serial.println("AG Gun");
-    Keyboard.press(KEY_LEFT_CTRL);Keyboard.press('0');
+    Serial.println("AG Gun");
+    //Keyboard.press(KEY_LEFT_CTRL);//Keyboard.press('0');
     delay(tempoApertoBotao);
     
   }
   if (key == 'd'){
-    //Serial.println("Autopilot");
-    Keyboard.press('a');
+    Serial.println("Autopilot");
+    //Keyboard.press('a');
     delay(tempoApertoBotao);
     
   }
   if (key == 'f'){
-    //Serial.println("WayPoint next");
-    Keyboard.press('n');
+    Serial.println("WayPoint next");
+    //Keyboard.press('n');
     delay(tempoApertoBotao);
     
   }
   if (key == 'g'){
-    //Serial.println("WayPoint previus");
-    Keyboard.press(KEY_LEFT_CTRL); Keyboard.press('n');
+    Serial.println("WayPoint previus");
+    //Keyboard.press(KEY_LEFT_CTRL); //Keyboard.press('n');
     delay(tempoApertoBotao);
     
   }

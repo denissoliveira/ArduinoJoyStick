@@ -58,13 +58,13 @@ void CheckSwithsButtons(void) {
     Keyboard.press(KEY_RIGHT_SHIFT); Keyboard.press('5');
     delay(tempoApertoBotao);
     Keyboard.releaseAll();
-    Serial.println("HSD ECM ORIDE");
+    //Serial.println("HSD ECM ORIDE");
     lastButtonState[0] = pin9;
   }else if (pin9 == 0 && lastButtonState[0] != pin9){
     Keyboard.press(KEY_RIGHT_SHIFT); Keyboard.press('5');
     delay(tempoApertoBotao);
     Keyboard.releaseAll();
-    Serial.println("HSD ECM OFF");
+    //Serial.println("HSD ECM OFF");
     lastButtonState[0] = pin9;
   }
 
@@ -72,14 +72,14 @@ void CheckSwithsButtons(void) {
     Keyboard.press(KEY_RIGHT_SHIFT); Keyboard.press('6');
     delay(tempoApertoBotao);
     Keyboard.releaseAll();
-    Serial.println("HSD MODE NAV");
+    //Serial.println("HSD MODE NAV");
     lastButtonState[1] = pin16;
     //lastButtonState[10] = 0;
   }else if (pin16 == 0 && lastButtonState[1] != pin16){
     Keyboard.press(KEY_RIGHT_SHIFT); Keyboard.press('6');
     delay(tempoApertoBotao);
     Keyboard.releaseAll();
-    Serial.println("HSD MODE TID");
+    //Serial.println("HSD MODE TID");
     lastButtonState[1] = pin16;
   }
 
@@ -88,13 +88,13 @@ void CheckSwithsButtons(void) {
     Keyboard.press(KEY_RIGHT_SHIFT); Keyboard.press('1');
     delay(tempoApertoBotao);
     Keyboard.releaseAll();
-    Serial.println("HUD DECLUTTER ON");
+    //Serial.println("HUD DECLUTTER ON");
     lastButtonState[3] = pin14;
   }else if (pin14 == 0 && lastButtonState[3] != pin14){
     Keyboard.press(KEY_RIGHT_SHIFT); Keyboard.press('1');
     delay(tempoApertoBotao);
     Keyboard.releaseAll();
-    Serial.println("HUD DECLUTTER OFF");
+    //Serial.println("HUD DECLUTTER OFF");
     lastButtonState[3] = pin14;
   }
 
@@ -102,13 +102,13 @@ void CheckSwithsButtons(void) {
     Keyboard.press(KEY_RIGHT_SHIFT); Keyboard.press('2');
     delay(tempoApertoBotao);
     Keyboard.releaseAll();
-    Serial.println("HUD AWL ILS");
+    //Serial.println("HUD AWL ILS");
     lastButtonState[4] = pin15;
   }else if (pin15 == 0 && lastButtonState[4] != pin15){
     Keyboard.press(KEY_RIGHT_SHIFT); Keyboard.press('2');
     delay(tempoApertoBotao);
     Keyboard.releaseAll();
-    Serial.println("HUD AWL ACL");
+    //Serial.println("HUD AWL ACL");
     lastButtonState[4] = pin15;
   }
 
@@ -116,13 +116,13 @@ void CheckSwithsButtons(void) {
     Keyboard.press(KEY_RIGHT_SHIFT); Keyboard.press('4');
     delay(tempoApertoBotao);
     Keyboard.releaseAll();
-    Serial.println("VDI AWL ILS");
+    //Serial.println("VDI AWL ILS");
     lastButtonState[5] = pin18;
   }else if (pin18 == 0 && lastButtonState[5] != pin18){
     Keyboard.press(KEY_RIGHT_SHIFT); Keyboard.press('4');
     delay(tempoApertoBotao);
     Keyboard.releaseAll();
-    Serial.println("VDI AWL ACL");
+    //Serial.println("VDI AWL ACL");
     lastButtonState[5] = pin18;
   }
 
@@ -130,13 +130,13 @@ void CheckSwithsButtons(void) {
     Keyboard.press(KEY_RIGHT_SHIFT); Keyboard.press('3');
     delay(tempoApertoBotao);
     Keyboard.releaseAll();
-    Serial.println("VDI MODE TV");
+    //Serial.println("VDI MODE TV");
     lastButtonState[6] = pin19;
   }else if (pin19 == 0 && lastButtonState[6] != pin19){
     Keyboard.press(KEY_RIGHT_SHIFT); Keyboard.press('3');
     delay(tempoApertoBotao);
     Keyboard.releaseAll();
-    Serial.println("VDI MODE NORM");
+    //Serial.println("VDI MODE NORM");
     lastButtonState[6] = pin19;
   }
 
@@ -144,13 +144,13 @@ void CheckSwithsButtons(void) {
     Keyboard.press(KEY_LEFT_ALT); Keyboard.press('3');
     delay(tempoApertoBotao);
     Keyboard.releaseAll();
-    Serial.println("POWER HSD/ECM ON");
+    //Serial.println("POWER HSD/ECM ON");
     lastButtonState[7] = pin20;
   }else if (pin20 == 0 && lastButtonState[7] != pin20){
     Keyboard.press(KEY_LEFT_ALT); Keyboard.press('3');
     delay(tempoApertoBotao);
     Keyboard.releaseAll();
-    Serial.println("POWER HSD/ECM OFF");
+    //Serial.println("POWER HSD/ECM OFF");
     lastButtonState[7] = pin20;
   }
   
@@ -158,13 +158,13 @@ void CheckSwithsButtons(void) {
     Keyboard.press(KEY_LEFT_ALT); Keyboard.press('2');
     delay(tempoApertoBotao);
     Keyboard.releaseAll();
-    Serial.println("POWER HUD ON");
+    //Serial.println("POWER HUD ON");
     lastButtonState[8] = pin21;
   }else if (pin21 == 0 && lastButtonState[8] != pin21){
     Keyboard.press(KEY_LEFT_ALT); Keyboard.press('2');
     delay(tempoApertoBotao);
     Keyboard.releaseAll();
-    Serial.println("POWER HUD OFF");
+    //Serial.println("POWER HUD OFF");
     lastButtonState[8] = pin21;
   }
 
@@ -172,13 +172,13 @@ void CheckSwithsButtons(void) {
     Keyboard.press(KEY_LEFT_ALT); Keyboard.press('1');
     delay(tempoApertoBotao);
     Keyboard.releaseAll();
-    Serial.println("POWER VDI ON");
+    //Serial.println("POWER VDI ON");
     lastButtonState[9] = pin0;
   }else if (pin0 == 0 && lastButtonState[9] != pin0){
     Keyboard.press(KEY_LEFT_ALT); Keyboard.press('1');
     delay(tempoApertoBotao);
     Keyboard.releaseAll();
-    Serial.println("POWER VDI OFF");
+    //Serial.println("POWER VDI OFF");
     lastButtonState[9] = pin0;
   }
 
@@ -193,17 +193,17 @@ void CheckAllButtons(void) {
             switch (keypad.key[i].kstate) {  // Report active key state : IDLE, PRESSED, HOLD, or RELEASED
                     case PRESSED:
                               tecladoKeypadMatrix(keypad.key[i].kchar);
-                              //Serial.println("PRESSED");
+                              ////Serial.println("PRESSED");
                               break;
                     case HOLD:
-                              //Serial.println("HOLD");
+                              ////Serial.println("HOLD");
                               break;
                     case RELEASED:
-                              //Serial.println("RELEASED");
+                              ////Serial.println("RELEASED");
                               break;
                     case IDLE:
                               Keyboard.releaseAll();
-                              //Serial.println("IDLE");
+                              ////Serial.println("IDLE");
                               break;
             }
            }   
@@ -213,62 +213,63 @@ void CheckAllButtons(void) {
 
 
 char tecladoKeypadMatrix(char key) {
+  ////Serial.println(key);
   if (key == '1'){
-    Serial.println("TACAN");
+    //Serial.println("TACAN");
     Keyboard.press(KEY_LEFT_SHIFT); Keyboard.press('6');
     delay(tempoApertoBotao);
     
   }
   if (key == '2'){
-    Serial.println("DEST");
+    //Serial.println("DEST");
     Keyboard.press(KEY_LEFT_SHIFT); Keyboard.press('7');
     delay(tempoApertoBotao);
     
   }
   if (key == '3'){
-    Serial.println("AWL/PCD");
+    //Serial.println("AWL/PCD");
     Keyboard.press(KEY_LEFT_SHIFT); Keyboard.press('8');
     delay(tempoApertoBotao);
     
   }
   if (key == '4'){
-    Serial.println("VEC");
+    //Serial.println("VEC");
     Keyboard.press(KEY_LEFT_SHIFT); Keyboard.press('9');
     delay(tempoApertoBotao);
     
   }
   if (key == '5'){
-    Serial.println("MAN");
+    //Serial.println("MAN");
     Keyboard.press(KEY_LEFT_SHIFT); Keyboard.press('0');
     delay(tempoApertoBotao);
     
   }
   if (key == '6'){
-    Serial.println("T O.");
+    //Serial.println("T O.");
     Keyboard.press(KEY_LEFT_SHIFT); Keyboard.press('1');
     delay(tempoApertoBotao);
     
   }
   if (key == '7'){
-    Serial.println("CRUISE");
+    //Serial.println("CRUISE");
     Keyboard.press(KEY_LEFT_SHIFT); Keyboard.press('2');
     delay(tempoApertoBotao);
     
   }
   if (key == '8'){
-    Serial.println("A/A");
+    //Serial.println("A/A");
     Keyboard.press(KEY_LEFT_SHIFT); Keyboard.press('3');
     delay(tempoApertoBotao);
     
   }
   if (key == '9'){
-    Serial.println("A/G");
+    //Serial.println("A/G");
     Keyboard.press(KEY_LEFT_SHIFT); Keyboard.press('4');
     delay(tempoApertoBotao);
     
   }
   if (key == '0'){
-    Serial.println("LDG");
+    //Serial.println("LDG");
     Keyboard.press(KEY_LEFT_SHIFT); Keyboard.press('5');
     delay(tempoApertoBotao);
     

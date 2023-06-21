@@ -67,100 +67,100 @@ void CheckAllButtons(void) {
 
   //VISEUR
   if (pin8 == 1 && lastButtonState[state01] != pin8) {
-    Keyboard.press(KEY_LEFT_ALT);    Keyboard.press('1');
+    //Keyboard.press(KEY_LEFT_ALT);    //Keyboard.press('1');
     delay(tempoApertoBotao);
     Keyboard.releaseAll();
-    //Serial.println("A");
+    Serial.println("A");
     lastButtonState[state01] = pin8;
     lastButtonState[state03] = 0;
   }else {
     lastButtonState[state01] = pin8;
   }
   if (pin9 == 1 && lastButtonState[state02] != pin9) {
-    Keyboard.press(KEY_LEFT_SHIFT);    Keyboard.press('1');
+    //Keyboard.press(KEY_LEFT_SHIFT);    //Keyboard.press('1');
     delay(tempoApertoBotao);
     Keyboard.releaseAll();
-    //Serial.println("VISEUR");
+    Serial.println("VISEUR");
     lastButtonState[state02] = pin9;
     lastButtonState[state03] = 0;
   }else {
     lastButtonState[state02] = pin9;
   }
   if (pin9 == 0 && pin8 == 0 && lastButtonState[state03] != 1) {
-    Keyboard.press(KEY_LEFT_CTRL);    Keyboard.press('1');
+    //Keyboard.press(KEY_LEFT_CTRL);    //Keyboard.press('1');
     delay(tempoApertoBotao);
     Keyboard.releaseAll();
-    //Serial.println("M");
+    Serial.println("M");
     lastButtonState[state03] = 1;
   }
 
   if (pin18 == 1 && lastButtonState[state04] != pin18) {
-    Keyboard.press(KEY_LEFT_SHIFT);    Keyboard.press('6');
+    //Keyboard.press(KEY_LEFT_SHIFT);    //Keyboard.press('6');
     delay(tempoApertoBotao);
     Keyboard.releaseAll();
-    //Serial.println("CPC");
+    Serial.println("CPC");
     lastButtonState[state04] = pin18;
   }else if (pin18 == 0 && lastButtonState[state04] != pin18){
-    Keyboard.press(KEY_LEFT_CTRL);    Keyboard.press('6');
+    //Keyboard.press(KEY_LEFT_CTRL);    //Keyboard.press('6');
     delay(tempoApertoBotao);
     Keyboard.releaseAll();
-    //Serial.println("SALV");
+    Serial.println("SALV");
     lastButtonState[state04] = pin18;
   }
 
   if (pin15 == 1 && lastButtonState[state05] != pin15) {
-    Keyboard.press(KEY_LEFT_SHIFT);    Keyboard.press('7');
+    //Keyboard.press(KEY_LEFT_SHIFT);    //Keyboard.press('7');
     delay(tempoApertoBotao);
     Keyboard.releaseAll();
-    //Serial.println("INST");
+    Serial.println("INST");
     lastButtonState[state05] = pin15;
     lastButtonState[state07] = 0;
   }else {
     lastButtonState[state05] = pin15;
   }
   if (pin14 == 1 && lastButtonState[state06] != pin14) {
-    Keyboard.press(KEY_LEFT_ALT);    Keyboard.press('7');
+    //Keyboard.press(KEY_LEFT_ALT);    //Keyboard.press('7');
     delay(tempoApertoBotao);
     Keyboard.releaseAll();
-    //Serial.println("INERT");
+    Serial.println("INERT");
     lastButtonState[state06] = pin14;
     lastButtonState[state07] = 0;
   }else {
     lastButtonState[state06] = pin14;
   }
   if (pin15 == 0 && pin14 == 0 && lastButtonState[state07] != 1) {
-    Keyboard.press(KEY_LEFT_CTRL);    Keyboard.press('7');
+    //Keyboard.press(KEY_LEFT_CTRL);    //Keyboard.press('7');
     delay(tempoApertoBotao);
     Keyboard.releaseAll();
-    //Serial.println("RET");
+    Serial.println("RET");
     lastButtonState[state07] = 1;
   }
 
   if (pin10 == 1 && lastButtonState[state08] != pin10) {
-    Keyboard.press(KEY_LEFT_SHIFT);    Keyboard.press('2');
+    //Keyboard.press(KEY_LEFT_SHIFT);    //Keyboard.press('2');
     delay(tempoApertoBotao);
     Keyboard.releaseAll();
-    //Serial.println("EX");
+    Serial.println("EX");
     lastButtonState[state08] = pin10;
     lastButtonState[state10] = 0;
   }else {
     lastButtonState[state08] = pin10;
   }
   if (pin16 == 1 && lastButtonState[state09] != pin16) {
-    Keyboard.press(KEY_LEFT_ALT);    Keyboard.press('2');
+    //Keyboard.press(KEY_LEFT_ALT);    //Keyboard.press('2');
     delay(tempoApertoBotao);
     Keyboard.releaseAll();
-    //Serial.println("IN");
+    Serial.println("IN");
     lastButtonState[state09] = pin16;
     lastButtonState[state10] = 0;
   }else {
     lastButtonState[state09] = pin16;
   }
   if (pin10 == 0 && pin16 == 0 && lastButtonState[state10] != 1) {
-    Keyboard.press(KEY_LEFT_CTRL);    Keyboard.press('2');
+    //Keyboard.press(KEY_LEFT_CTRL);    //Keyboard.press('2');
     delay(tempoApertoBotao);
     Keyboard.releaseAll();
-    //Serial.println("1 + 2");
+    Serial.println("1 + 2");
     lastButtonState[state10] = 1;
   }
 
@@ -173,50 +173,50 @@ void tecladoKeypadMatrix(void) {
 
   //Arms buttons
   if (key == '4'){ //EXT G
-    //Serial.println("EXT G");
-    Keyboard.press(KEY_RIGHT_CTRL); Keyboard.press('4');
+    Serial.println("EXT G");
+    //Keyboard.press(KEY_RIGHT_CTRL); //Keyboard.press('4');
     delay(tempoApertoBotao);
     Keyboard.releaseAll();
   }
   if (key == '3'){ //MG FUS
-    //Serial.println("MG FUS");
-    Keyboard.press(KEY_RIGHT_CTRL); Keyboard.press('3');
+    Serial.println("MG FUS");
+    //Keyboard.press(KEY_RIGHT_CTRL); //Keyboard.press('3');
     delay(tempoApertoBotao);
     Keyboard.releaseAll();
   }
   if (key == '2'){  //CAN A
-    //Serial.println("CAN A");
-    Keyboard.press(KEY_RIGHT_CTRL); Keyboard.press('2');
+    Serial.println("CAN A");
+    //Keyboard.press(KEY_RIGHT_CTRL); //Keyboard.press('2');
     delay(tempoApertoBotao);
     Keyboard.releaseAll();
   }
   if (key == '1'){ //BOMB VOIL
-    //Serial.println("BOMB VOIL");
-    Keyboard.press(KEY_RIGHT_CTRL); Keyboard.press('1');
+    Serial.println("BOMB VOIL");
+    //Keyboard.press(KEY_RIGHT_CTRL); //Keyboard.press('1');
     delay(tempoApertoBotao);
     Keyboard.releaseAll();
   }
   if (key == '8'){ //EXT D
-    //Serial.println("EXT D");
-    Keyboard.press(KEY_RIGHT_CTRL); Keyboard.press(KEY_RIGHT_SHIFT); Keyboard.press('8');
+    Serial.println("EXT D");
+    //Keyboard.press(KEY_RIGHT_CTRL); //Keyboard.press(KEY_RIGHT_SHIFT); //Keyboard.press('8');
     delay(tempoApertoBotao);
     Keyboard.releaseAll();
   }
   if (key == '7'){ //MD
-    //Serial.println("MD");
-    Keyboard.press(KEY_RIGHT_CTRL); Keyboard.press(KEY_RIGHT_SHIFT); Keyboard.press('7');
+    Serial.println("MD");
+    //Keyboard.press(KEY_RIGHT_CTRL); //Keyboard.press(KEY_RIGHT_SHIFT); //Keyboard.press('7');
     delay(tempoApertoBotao);
     Keyboard.releaseAll();
   }
   if (key == '6'){  //CAN S ROQ
-    //Serial.println("CAN S ROQ");
-    Keyboard.press(KEY_RIGHT_CTRL); Keyboard.press('6');
+    Serial.println("CAN S ROQ");
+    //Keyboard.press(KEY_RIGHT_CTRL); //Keyboard.press('6');
     delay(tempoApertoBotao);
     Keyboard.releaseAll();
   }
   if (key == '5'){ //BOMB FUS
-    //Serial.println("BOMB FUS");
-    Keyboard.press(KEY_RIGHT_CTRL); Keyboard.press('5');
+    Serial.println("BOMB FUS");
+    //Keyboard.press(KEY_RIGHT_CTRL); //Keyboard.press('5');
     delay(tempoApertoBotao);
     Keyboard.releaseAll();
   }
